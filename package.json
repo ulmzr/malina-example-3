@@ -13,7 +13,6 @@
    },
    "license": "MIT",
    "devDependencies": {
-      "derver": "^0.4.16",
       "esbuild": "^0.12.9",
       "malinajs": "^0.6.28",
       "navaid": "^1.2.0",
@@ -21,6 +20,7 @@
       "rimraf": "^3.0.2"
    },
    "dependencies": {
+      "derver": "^0.4.16",
       "@hapi/boom": "^9.1.2",
       "dotenv": "^10.0.0",
       "mysql2": "^2.2.5"
