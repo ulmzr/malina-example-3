@@ -1,0 +1,32 @@
+<script>
+
+   let articles;
+
+   async function onMount(){
+      /*
+      fetch('http://localhost:3000/api/blogs')
+      .then(response => response.json())
+      .then(res => articles = res.data);
+      */
+      const response = await fetch('http://localhost:3000/api/blogs');
+      const res = await response.json();
+      articles = res.data
+   }
+
+</script>
+
+<malina:head>
+   <title>Blogs</title>
+</malina:head>
+
+<h2>Blog</h2>
+
+{#if articles}
+<ul>
+    {#each articles as article}
+        <li><a href={`blog/${article.id}`}>{article.title}</a></li>
+    {/each}
+</ul>
+{:else}
+<p>Loading</p>
+{/if}

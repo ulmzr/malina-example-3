@@ -1,0 +1,28 @@
+{
+   "name": "malina-fullstack-app",
+   "version": "0.0.1",
+   "description": "malina client and Derver server app, bundeled with esduild",
+   "main": "index.js",
+   "scripts": {
+      "clean": "rimraf dist/static/build",
+      "build": "npm run clean && node esbuild",
+      "dev": "npm run clean && node esbuild --dev",
+      "prestart": "npm run build",
+      "start": "cd dist && node app",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "license": "MIT",
+   "devDependencies": {
+      "derver": "^0.4.16",
+      "esbuild": "^0.12.9",
+      "malinajs": "^0.6.28",
+      "navaid": "^1.2.0",
+      "node-watch": "^0.7.1",
+      "rimraf": "^3.0.2"
+   },
+   "dependencies": {
+      "@hapi/boom": "^9.1.2",
+      "dotenv": "^10.0.0",
+      "mysql2": "^2.2.5"
+   }
+}

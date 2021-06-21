@@ -1,0 +1,18 @@
+DROP DATABASE IF EXISTS `myblog`;
+CREATE DATABASE IF NOT EXISTS `myblog`;
+USE `myblog`;
+
+DROP TABLE IF EXISTS `blogs`;
+CREATE TABLE IF NOT EXISTS `blogs` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) DEFAULT NULL,
+  `subtitle` varchar(256) DEFAULT NULL,
+  `content` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DELETE FROM `blogs`;
+INSERT INTO `blogs` (`id`, `title`, `subtitle`, `content`) VALUES
+	(1, 'Raspberry', 'In Russian it is called Malina', '<p>\r\nThe raspberry is the edible fruit of a multitude of plant species in the genus Rubus of the rose family, most of which are in the subgenus Idaeobatus. The name also applies to these plants themselves. Raspberries are perennial with woody stems. World production of raspberries in 2019 was 822,493 tonnes, led by Russia with approximately 21% of the total\r\n</p>\r\n<p>\r\nVarious kinds of raspberries can be cultivated from hardiness zones 3 to 9. Raspberries are traditionally planted in the winter as dormant canes, although planting of tender, plug plants produced by tissue culture has become much more common. A specialized production system called "long cane production" involves growing canes for a year in a northern climate such as Scotland or Oregon or Washington, where the chilling requirement for proper bud break is attained, or attained earlier than the ultimate place of planting. These canes are then dug, roots and all, to be replanted in warmer climates such as Spain, where they quickly flower and produce a very early season crop. Plants are typically planted 2-6 per m in fertile, well drained soil; raspberries are usually planted in raised beds/ridges, if there is any question about root rot problems.\r\n</p>'),
+	(2, 'Virtual DOM is pure overhead', 'Let\'s retire the \'virtual DOM is fast\' myth once and for all', '<p>\r\nIf you\'ve used JavaScript frameworks in the last few years, you\'ve probably heard the phrase \'the virtual DOM is fast\', often said to mean that it\'s faster than the real DOM. It\'s a surprisingly resilient meme — for example people have asked how Svelte can be fast when it doesn\'t use a virtual DOM.\r\n</p>\r\n<p>\r\nIt\'s important to understand that virtual DOM isn\'t a feature. It\'s a means to an end, the end being declarative, state-driven UI development. Virtual DOM is valuable because it allows you to build apps without thinking about state transitions, with performance that is generally good enough. That means less buggy code, and more time spent on creative tasks instead of tedious ones.\r\n</p>'),
+	(3, 'Feature Declined by Svelte Went Live in Malina', 'How to pass CSS classes to a child component', '<p>\r\nI found that developers in the Svelte community very often talk about passing a class to a child component, how a parent can impact the styles of a child component, and changing margins, colors and other styles. Besides this, Svelte has a collection of issues that relate to this:\r\n<ul>\r\n<li>Passing class to components #2870</li>\r\n<li>Allow scoped class to be passed to the child components #4843</li>\r\n<li>Class directive for components #5236</li>\r\n<li>Allow parent to impact child component CSS #22</li>\r\n<li>Class directives for components #4749</li>\r\n</ul>\r\n</p>\r\n<p>\r\nUsing <code>:global</code> can solve some cases, but it’s not a very convenient way and can have unwanted effects on other components.\r\n</p>\r\n<p>\r\nSo we in the Malina.js community (yes, we have a small one) experimented with some things and decided to try passing a class to a component.\r\n</p>\r\n');

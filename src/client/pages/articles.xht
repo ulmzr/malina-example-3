@@ -1,0 +1,25 @@
+<script>
+   export let params;
+   let id = params.postid
+
+   let article;
+
+   async function onMount(){
+      const response = await fetch(`http://localhost:3000/api/blogs/${id}`);
+      const res = await response.json();
+      article = res.data
+   }
+</script>
+
+<malina:head>
+   <title>Article</title>
+</malina:head>
+
+{#if article}
+<h2>{article.title}</h2>
+<h4>{article.subtitle}</h4>
+<hr/>
+{@html article.content}
+{:else}
+<p>Loading...</p>
+{/if}
