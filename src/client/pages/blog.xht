@@ -8,7 +8,7 @@
       .then(response => response.json())
       .then(res => articles = res.data);
       */
-      const response = await fetch('http://localhost:3000/api/blogs');
+      const response = await fetch('/api/blogs');
       const res = await response.json();
       articles = res.data
    }
