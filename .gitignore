@@ -1,4 +1,5 @@
 node_modules
+dist/.env
 dist/app.*
 dist/static/build
 package-lock.json
